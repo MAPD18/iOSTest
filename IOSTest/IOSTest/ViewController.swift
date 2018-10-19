@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  IOSTest
 //
-//  Created by Rodrigo Silva on 2018-10-18.
+//  Created by Rodrigo Silva (Student ID 300992648) on 2018-10-18.
 //  Copyright © 2018 Rodrigo Silva. All rights reserved.
 //
 
@@ -33,9 +33,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         loadLabelsDictionary()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
+    // Link every quantity label to a number relative to the TAG of the + and - buttons
     func loadLabelsDictionary() {
         labels = [
             1 : quantity1View,
@@ -46,26 +46,24 @@ class ViewController: UIViewController {
         ]
     }
     
+    // Resets every wuantity label to 0
     func clearQuantityFields() {
         for field: UILabel in quantityLabelCollection {
             field.text = "0"
         }
     }
     
+    // Resets every user input text fields to ""
     func clearTextFields() {
         for field: UITextField in textViewCollection {
             field.text = ""
         }
     }
     
+    // Reset app
     func reset() {
         clearTextFields()
         clearQuantityFields()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func quantityButtonClicked(_ sender: UIButton) {
@@ -80,6 +78,7 @@ class ViewController: UIViewController {
         reset()
     }
     
+    // increase or decrease the quantity based on the button clicked
     func changeQuantity(button: UIButton, increase: Bool) {
         let label = labels[button.tag]!
         let operand = increase ? 1 : -1;

@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var item4View: UITextField!
     @IBOutlet weak var item5View: UITextField!
     
+    @IBOutlet var textViewCollection: [UITextField]!
+    @IBOutlet var quantityLabelCollection: [UILabel]!
+    
     @IBOutlet weak var quantity1View: UILabel!
     @IBOutlet weak var quantity2View: UILabel!
     @IBOutlet weak var quantity3View: UILabel!
@@ -42,6 +45,23 @@ class ViewController: UIViewController {
             5 : quantity5View,
         ]
     }
+    
+    func clearQuantityFields() {
+        for field: UILabel in quantityLabelCollection {
+            field.text = "0"
+        }
+    }
+    
+    func clearTextFields() {
+        for field: UITextField in textViewCollection {
+            field.text = ""
+        }
+    }
+    
+    func reset() {
+        clearTextFields()
+        clearQuantityFields()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,6 +77,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cancelClicked(_ sender: UIButton) {
+        reset()
     }
     
     func changeQuantity(button: UIButton, increase: Bool) {
@@ -64,7 +85,9 @@ class ViewController: UIViewController {
         let operand = increase ? 1 : -1;
         var quantity = Int(label.text!)!
         quantity = quantity + operand
-        label.text = String(quantity)
+        if quantity >= 0 {
+            label.text = String(quantity)
+        }
     }
     
 }

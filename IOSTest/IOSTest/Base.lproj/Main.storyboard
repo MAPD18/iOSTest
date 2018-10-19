@@ -331,6 +331,17 @@
                         <outlet property="quantity3View" destination="EnN-p4-2Yv" id="wfk-DO-Ct1"/>
                         <outlet property="quantity4View" destination="ndm-3R-nsk" id="Fy8-qk-uqf"/>
                         <outlet property="quantity5View" destination="VJU-Lj-ugV" id="51D-1b-iIR"/>
+                        <outletCollection property="textViewCollection" destination="qaW-X4-olN" collectionClass="NSMutableArray" id="jLf-Vy-k9d"/>
+                        <outletCollection property="textViewCollection" destination="HbE-81-27G" collectionClass="NSMutableArray" id="aeq-IE-brA"/>
+                        <outletCollection property="textViewCollection" destination="Q62-6X-hJ4" collectionClass="NSMutableArray" id="h6c-Qo-r3t"/>
+                        <outletCollection property="textViewCollection" destination="3ap-uK-ztK" collectionClass="NSMutableArray" id="Llv-YT-pmG"/>
+                        <outletCollection property="textViewCollection" destination="vG9-us-2aq" collectionClass="NSMutableArray" id="93l-Yk-RL8"/>
+                        <outletCollection property="textViewCollection" destination="zv4-JC-oRH" collectionClass="NSMutableArray" id="PQz-6U-qel"/>
+                        <outletCollection property="quantityLabelCollection" destination="rZW-uK-KRj" collectionClass="NSMutableArray" id="9tO-db-OuA"/>
+                        <outletCollection property="quantityLabelCollection" destination="Vws-Q5-YL7" collectionClass="NSMutableArray" id="QcA-F9-vxr"/>
+                        <outletCollection property="quantityLabelCollection" destination="EnN-p4-2Yv" collectionClass="NSMutableArray" id="DFT-a1-XIb"/>
+                        <outletCollection property="quantityLabelCollection" destination="ndm-3R-nsk" collectionClass="NSMutableArray" id="tNk-4S-5m4"/>
+                        <outletCollection property="quantityLabelCollection" destination="VJU-Lj-ugV" collectionClass="NSMutableArray" id="bxV-Hp-hEx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

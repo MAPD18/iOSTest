@@ -24,10 +24,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var quantity4View: UILabel!
     @IBOutlet weak var quantity5View: UILabel!
     
+    var labels: Dictionary<Int, UILabel> = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadLabelsDictionary()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func loadLabelsDictionary() {
+        labels = [
+            1 : quantity1View,
+            2 : quantity2View,
+            3 : quantity3View,
+            4 : quantity4View,
+            5 : quantity5View,
+        ]
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,11 +49,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func quantityButtonClicked(_ sender: UIButton) {
-        if (sender.titleLabel?.text == "+") {
-            changeQuantity(button: sender, increase: true)
-        } else {
-            changeQuantity(button: sender, increase: false)
-        }
+        let increase = sender.titleLabel?.text == "+"
+        changeQuantity(button: sender, increase: increase)
     }
     
     @IBAction func saveClicked(_ sender: UIButton) {
@@ -50,23 +60,11 @@ class ViewController: UIViewController {
     }
     
     func changeQuantity(button: UIButton, increase: Bool) {
-        switch button.tag {
-        case 1:
-            if increase {
-                var quantity = Int(quantity1View.text!)!
-                quantity = quantity + 1
-                quantity1View.text = String(quantity)
-            }
-        default:
-            <#code#>
-        }
-    }
-    
-    func blabla(label: UILabel, increase: Bool) {
+        let label = labels[button.tag]!
+        let operand = increase ? 1 : -1;
         var quantity = Int(label.text!)!
-        quantity = quantity + 1
+        quantity = quantity + operand
         label.text = String(quantity)
-
     }
     
 }
